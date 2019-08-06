@@ -2,6 +2,60 @@ import React from "react";
 import "./styles/App.css";
 
 class App extends React.Component {
+   constructor(props) {
+      super(props);
+      this.Col_Xs = "";
+      this.Col_Sm = "";
+      this.Col_Md = "";
+      this.Col_Lg = "";
+   }
+
+   state = {
+      XsValue: "",
+      SmValue: "",
+      MdValue: "",
+      LgValue: "",
+      outPut: "Waiting..."
+   };
+
+   onChangeColXsValue = e => {
+      this.setState({ XsValue: e.target.value });
+   };
+
+   onChangeColSmValue = e => {
+      this.setState({ SmValue: e.target.value });
+   };
+
+   onChangeColMdValue = e => {
+      this.setState({ MdValue: e.target.value });
+   };
+
+   onChangeColLgValue = e => {
+      this.setState({ LgValue: e.target.value });
+   };
+
+   doClear = () => {
+      this.Col_Xs.value = "";
+      this.Col_Sm.value = "";
+      this.Col_Md.value = "";
+      this.Col_Lg.value = "";
+      this.setState({
+         XsValue: "",
+         SmValue: "",
+         MdValue: "",
+         LgValue: "",
+         outPut: "Waiting..."
+      });
+   };
+
+   doConvert = () => {
+      this.setState({
+         outPut: `col-xl-${this.state.LgValue} col-lg-${
+            this.state.MdValue
+         } col-md-${this.state.SmValue} col-${this.state.XsValue}`
+      });
+   };
+
    render() {
       return (
          <div className="main">
@@ -11,36 +65,40 @@ class App extends React.Component {
                <div className="form-item">
                   <label className="form-label">Col-Xs- :</label>
                   <input
+                     ref={ref => (this.Col_Xs = ref)}
                      id="Col-Xs"
                      className="form-input"
-                     onchange="onChangeCol_XsValue()"
+                     onChange={this.onChangeColXsValue}
                      type="text"
                   />
                </div>
                <div className="form-item">
                   <label className="form-label">Col-Sm- :</label>
                   <input
+                     ref={ref => (this.Col_Sm = ref)}
                      id="Col-Sm"
                      className="form-input"
-                     onchange="onChangeCol_SmValue()"
+                     onChange={this.onChangeColSmValue}
                      type="text"
                   />
                </div>
                <div className="form-item">
                   <label className="form-label">Col-Md- :</label>
                   <input
+                     ref={ref => (this.Col_Md = ref)}
                      id="Col-Md"
                      className="form-input"
-                     onchange="onChangeCol_MdValue()"
+                     onChange={this.onChangeColMdValue}
                      type="text"
                   />
                </div>
                <div className="form-item">
                   <label className="form-label">Col-Lg- :</label>
                   <input
+                     ref={ref => (this.Col_Lg = ref)}
                      id="Col-Lg"
                      className="form-input"
-                     onchange="onChangeCol_LgValue()"
+                     onChange={this.onChangeColLgValue}
                      type="text"
                   />
                </div>
@@ -48,14 +106,14 @@ class App extends React.Component {
                   <button
                      className="form-btn"
                      id="convertorBtn"
-                     onclick="btnClick()"
+                     onClick={this.doConvert}
                   >
                      Convert
                   </button>
                   <button
                      className="form-btn"
                      id="clearBtn"
-                     onclick="btnClear()"
+                     onClick={this.doClear}
                   >
                      Clear
                   </button>
@@ -64,7 +122,7 @@ class App extends React.Component {
             <div className="output-box">
                <h3 className="output-title">BS4 Output</h3>
                <h2 className="output-text" id="output">
-                  Waiting...
+                  {this.state.outPut}
                </h2>
             </div>
          </div>
