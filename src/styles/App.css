@@ -4,14 +4,42 @@
 
 body {
    background-color: #332f4a;
+   margin: 0;
 }
 
 .main {
    display: flex;
-   flex: 1;
+   flex: 1 1;
    justify-content: center;
    align-items: center;
    flex-direction: column;
+}
+
+.navbar {
+   display: flex;
+   background-color: #71EB9F;
+   width: 100%;
+}
+
+.navbar> .navbar-list {
+   display: flex;
+   flex: 1;
+   justify-content: space-evenly;
+   list-style: none;
+   padding: .5rem;
+}
+
+.navbar> .navbar-list> li {
+}
+
+.navbar> .navbar-list> li> a {
+   color: #332f4a;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.navbar> .navbar-list> li> a:hover {
+   color: #cc1919
 }
 
 .form-container {
