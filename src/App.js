@@ -1,6 +1,8 @@
 import React from "react";
 import "./styles/App.css";
 import Cols from './components/cols'
+import Webkits from './components/webkits'
+import Home from './components/home'
 import Navbar from "./components/navbar";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
@@ -15,10 +17,11 @@ class App extends React.Component {
                   <Route path="/cols">
                      <Cols />
                   </Route>
+                  <Route path="/webkits">
+                     <Webkits />
+                  </Route>
                   <Route path="/">
-                     <div>
-                        <h1>Hello</h1>
-                     </div>
+                     <Home />
                   </Route>
                </Switch>
             </main>

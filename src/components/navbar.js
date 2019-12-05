@@ -4,15 +4,20 @@ export default class Navbar extends React.Component {
     render() {
             return (
                <nav className="navbar">
+                  <div className="navbar-logo-container">
+                     <Link to="/" className="navbar-logo-link">
+                        <span className="navbar-logo-spn">
+                           <span>C-</span>
+                           <span>EZ</span>
+                        </span>
+                     </Link>
+                  </div>
                   <ul className="navbar-list">
-                     <li>
-                        <Link to="/">Home</Link>
-                     </li>
                      <li>
                         <Link to="/cols">Cols</Link>
                      </li>
                      <li>
-                        <Link to="/">Webkits</Link>
+                        <Link to="/webkits">Webkits</Link>
                      </li>
                   </ul>
                </nav>

@@ -51,9 +51,9 @@ export default class Cols extends React.Component {
 
    doConvert = () => {
       this.setState({
-         outPut: `col-xl-${this.state.LgValue} col-lg-${
-            this.state.MdValue
-         } col-md-${this.state.SmValue} col-${this.state.XsValue}`
+         outPut: `col-xl-${this.state.LgValue.trim()} col-lg-${
+            this.state.MdValue.trim()
+            } col-md-${this.state.SmValue.trim()} col-${this.state.XsValue.trim()}`
       });
    };
 
@@ -120,7 +120,10 @@ export default class Cols extends React.Component {
                   </button>
                </div>
             </div>
-            <div className="output-box"></div>
+            <div className="output-box">
+               <h3 class="output-title">BS4 Output</h3>
+               <h2 class="output-text" id="output">{this.state.outPut}</h2>
+            </div>
          </React.Fragment>
       );
    }

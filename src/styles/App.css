@@ -15,21 +15,26 @@ body {
    flex-direction: column;
 }
 
+
 .navbar {
    display: flex;
    background-color: #71EB9F;
    width: 100%;
+   position: sticky;
+   top: 0;
 }
 
 .navbar> .navbar-list {
    display: flex;
    flex: 1;
-   justify-content: space-evenly;
+   justify-content: flex-end;
    list-style: none;
    padding: .5rem;
+   flex: 4;
 }
 
 .navbar> .navbar-list> li {
+   padding-right: 2rem;
 }
 
 .navbar> .navbar-list> li> a {
@@ -41,6 +46,38 @@ body {
 .navbar> .navbar-list> li> a:hover {
    color: #cc1919
 }
+
+.navbar> .navbar-logo-container {
+   display: flex;
+   flex: 1;
+   padding-left: 1rem;
+}
+
+.navbar> .navbar-logo-container> .navbar-logo-link {
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+}
+
+.navbar> .navbar-logo-container> .navbar-logo-link> .navbar-logo-spn{
+   padding: 2px 30px 2px 10px;
+    border: 2px dashed #479be4;
+}
+
+.navbar> .navbar-logo-container> .navbar-logo-link> .navbar-logo-spn> span {
+   font-family: 'Permanent Marker', cursive;
+   text-decoration: none;
+   font-size: 25px;
+}
+
+.navbar> .navbar-logo-container> .navbar-logo-link> .navbar-logo-spn> span:first-child {
+    color: #479be4;
+}
+
+.navbar> .navbar-logo-container> .navbar-logo-link> .navbar-logo-spn> span:last-child {
+    color: #332f4a;
+}
+
 
 .form-container {
    background-color: #294761;
@@ -134,4 +171,10 @@ body {
 
 .page-title {
    color: #fff;
+}
+
+
+@media screen and (max-width: 767px) {
+   .navbar> .navbar-logo-container> .navbar-logo-link> .navbar-logo-spn {padding: 2px 5px 2px 5px;}
+   .navbar> .navbar-logo-container> .navbar-logo-link> .navbar-logo-spn> span {font-size: 15px;}
 }
