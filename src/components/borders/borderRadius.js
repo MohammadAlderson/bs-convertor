@@ -1,6 +1,6 @@
 import React from "react";
 import "./../../styles/App.css";
-
+import {InputBox} from './../ui-components/inputBox'
 
 export default class BorderRadius extends React.Component {
    constructor(props) {
@@ -10,7 +10,7 @@ export default class BorderRadius extends React.Component {
 
    state = {
       borderRadiusValue: "",
-      outPut: "Waiting..."
+      outPut: "Waiting..." 
    };
 
    onChangeBorderRadiusValue = e => {
@@ -32,22 +32,19 @@ export default class BorderRadius extends React.Component {
       });
    };
 
+   RefController = ref => {
+      this.BorderRadius = ref
+   }
+
    render() {
       return (
          <React.Fragment>
             <h1 className="page-title">Border-Radius</h1>
             <div className="form-container">
                <h3 className="input-title">Border-Radius Input</h3>
-               <div className="form-item">
-                  <label className="form-label">border-radius :</label>
-                  <input
-                     ref={ref => (this.BorderRadius = ref)}
-                     id="-border-radius"
-                     className="form-input"
-                     onChange={this.onChangeBorderRadiusValue}
-                     type="text"
-                  />
-               </div>
+               <InputBox boxLabel="border-radius" refController={this.RefController} inputId="border-radius" inputClass="form-input"
+                inputController={this.onChangeBorderRadiusValue} />
+               
                <div className="form-item btns-container">
                   <button
                      className="form-btn"
