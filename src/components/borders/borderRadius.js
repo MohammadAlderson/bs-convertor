@@ -31,9 +31,10 @@ export default class BorderRadius extends React.Component {
          return;
       }
       this.setState({
-         outPut: `border-radius: ${this.state.borderRadiusValue.trim()}; -webkit-border-radius: ${this.state.borderRadiusValue.trim()}; -moz-border-radius: ${
-            this.state.borderRadiusValue.trim()
-            }; -ms-border-radius: ${this.state.borderRadiusValue.trim()};`
+         outPut: `border-radius: ${this.state.borderRadiusValue.trim()}; 
+         -webkit-border-radius: ${this.state.borderRadiusValue.trim()}; 
+         -moz-border-radius: ${this.state.borderRadiusValue.trim()};
+          -ms-border-radius: ${this.state.borderRadiusValue.trim()};`
       });
    };
 
