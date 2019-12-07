@@ -173,6 +173,25 @@ body {
    color: #fff;
 }
 
+.sections-list {
+   display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 1rem 0;
+    justify-content: flex-start;
+    width: 100%;
+    list-style: none;
+}
+.sections-list> .sections-list-item {
+   margin: .5rem 0;
+}
+
+.sections-list> .sections-list-item> a {
+   color: #ddd;
+   text-decoration: none;
+}
+
+.sections-list> .sections-list-item> a:hover {color: #71EB9F}
 
 @media screen and (max-width: 767px) {
    .navbar> .navbar-logo-container> .navbar-logo-link> .navbar-logo-spn {padding: 2px 5px 2px 5px;}

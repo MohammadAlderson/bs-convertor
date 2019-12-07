@@ -33,11 +33,11 @@ export default class Webkits extends React.Component {
             <React.Fragment>
                 <h1 className="page-title">Webkits List</h1>
                 <div className="form-container">
-                    <ul>
+                    <ul className="sections-list">
                     {this.state.pageData.map(item => {
                         return(
-                            <li>
-                                <Link to={`/webkits/${item.title}`} >{item.title}</Link>
+                            <li className="sections-list-item">
+                                <Link to={`/${item.title}`} >{item.title}</Link>
                             </li>
                         )
                     })}

@@ -22,11 +22,11 @@ export default class Home extends React.Component {
                 <h1 className="page-title">Home</h1>
                 <div className="form-container">
                     <h3 className="input-title">Choose one</h3>
-                    <ul>
+                    <ul className="sections-list">
                         {this.state.pageData.map(item => {
                             return (
-                                <li>
-                                    <Link to={`/${item.title}`} >{item.title}</Link>
+                                <li className="sections-list-item">
+                                    <Link to={`/${item.title.toLowerCase()}`} >{item.title}</Link>
                                 </li>
                             )
                         })}
