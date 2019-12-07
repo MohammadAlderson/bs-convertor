@@ -2,6 +2,7 @@ import React from "react";
 import "./../../styles/App.css";
 import {InputBox} from './../ui-components/inputBox'
 
+
 export default class BorderRadius extends React.Component {
    constructor(props) {
       super(props);
@@ -18,17 +19,21 @@ export default class BorderRadius extends React.Component {
    };
 
    doClear = () => {
-      this.setState({
-        borderRadiusValue: "",
-        outPut: "Waiting..."
-      });
+      this.BorderRadius.value = ""
+      this.setState({ borderRadiusValue: "",outPut: "Waiting..."});
    };
 
    doConvert = () => {
+      if (this.BorderRadius.value === "") {
+         this.setState({outPut:"Enter something in text box"})
+         setTimeout(() => this.setState({ outPut: "Waiting..." }), 3000);
+         console.log('if occured');
+         return;
+      }
       this.setState({
-         outPut: `-webkit-border-radius: ${this.state.borderRadiusValue.trim()}; -moz-border-radius: ${
+         outPut: `border-radius: ${this.state.borderRadiusValue.trim()}; -webkit-border-radius: ${this.state.borderRadiusValue.trim()}; -moz-border-radius: ${
             this.state.borderRadiusValue.trim()
-            }; -o-border-radius: ${this.state.borderRadiusValue.trim()};`
+            }; -ms-border-radius: ${this.state.borderRadiusValue.trim()};`
       });
    };
 
@@ -42,9 +47,8 @@ export default class BorderRadius extends React.Component {
             <h1 className="page-title">Border-Radius</h1>
             <div className="form-container">
                <h3 className="input-title">Border-Radius Input</h3>
-               <InputBox boxLabel="border-radius" refController={this.RefController} inputId="border-radius" inputClass="form-input"
-                inputController={this.onChangeBorderRadiusValue} />
-               
+               <InputBox boxLabel="border-radius" refController={this.RefController} inputId="border-radius" 
+                  inputClass="form-input" inputController={this.onChangeBorderRadiusValue} />
                <div className="form-item btns-container">
                   <button
                      className="form-btn"
@@ -63,8 +67,8 @@ export default class BorderRadius extends React.Component {
                </div>
             </div>
             <div className="output-box">
-               <h3 class="output-title">Border-Radius Output</h3>
-               <h2 class="output-text" id="output">{this.state.outPut}</h2>
+               <h3 className="output-title">Border-Radius Output</h3>
+               <h2 className="output-text" id="output">{this.state.outPut}</h2>
             </div>
          </React.Fragment>
       );
