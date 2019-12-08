@@ -1,5 +1,6 @@
 import React from "react";
 import "./../../styles/App.css";
+import {InputBox} from './../ui-components/inputBox'
 
 
 export default class BorderRadius extends React.Component {
@@ -30,11 +31,16 @@ export default class BorderRadius extends React.Component {
          return;
       }
       this.setState({
-         outPut: `border-radius: ${this.state.borderRadiusValue.trim()}; -webkit-border-radius: ${this.state.borderRadiusValue.trim()}; -moz-border-radius: ${
-            this.state.borderRadiusValue.trim()
-            }; -ms-border-radius: ${this.state.borderRadiusValue.trim()};`
+         outPut: `border-radius: ${this.state.borderRadiusValue.trim()}; 
+         -webkit-border-radius: ${this.state.borderRadiusValue.trim()}; 
+         -moz-border-radius: ${this.state.borderRadiusValue.trim()};
+          -ms-border-radius: ${this.state.borderRadiusValue.trim()};`
       });
    };
+
+   RefController = ref => {
+      this.BorderRadius = ref
+   }
 
    render() {
       return (
@@ -42,16 +48,8 @@ export default class BorderRadius extends React.Component {
             <h1 className="page-title">Border-Radius</h1>
             <div className="form-container">
                <h3 className="input-title">Border-Radius Input</h3>
-               <div className="form-item">
-                  <label className="form-label">border-radius :</label>
-                  <input
-                     ref={ref => (this.BorderRadius = ref)}
-                     id="-border-radius"
-                     className="form-input"
-                     onChange={this.onChangeBorderRadiusValue}
-                     type="text"
-                  />
-               </div>
+               <InputBox boxLabel="border-radius" refController={this.RefController} inputId="border-radius" 
+                  inputClass="form-input" inputController={this.onChangeBorderRadiusValue} />
                <div className="form-item btns-container">
                   <button
                      className="form-btn"
