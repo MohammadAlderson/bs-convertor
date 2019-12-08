@@ -36,7 +36,7 @@ export default class Webkits extends React.Component {
                     <ul className="sections-list">
                     {this.state.pageData.map(item => {
                         return(
-                            <li className="sections-list-item">
+                            <li key={item.id} className="sections-list-item">
                                 <Link to={`/webkits/${item.title}`} >{item.title}</Link>
                             </li>
                         )
