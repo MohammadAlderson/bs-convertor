@@ -1,6 +1,7 @@
 import React from "react";
 import "./../../styles/App.css";
 import {InputBox} from './../ui-components/inputBox'
+import {OutputBox} from './../ui-components/outputBox'
 
 
 export default class BorderRadius extends React.Component {
@@ -67,10 +68,7 @@ export default class BorderRadius extends React.Component {
                   </button>
                </div>
             </div>
-            <div className="output-box">
-               <h3 className="output-title">Border-Radius Output</h3>
-               <h2 className="output-text" id="output">{this.state.outPut}</h2>
-            </div>
+            <OutputBox outputValue={this.state.outPut} boxLabel="Border-Radius Output" />
          </React.Fragment>
       );
    }

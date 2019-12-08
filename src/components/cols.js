@@ -1,6 +1,6 @@
 import React from "react";
 import "./../styles/App.css";
-
+import {OutputBox} from "./../components/ui-components/outputBox";
 
 export default class Cols extends React.Component {
    constructor(props) {
@@ -120,10 +120,7 @@ export default class Cols extends React.Component {
                   </button>
                </div>
             </div>
-            <div className="output-box">
-               <h3 class="output-title">BS4 Output</h3>
-               <h2 class="output-text" id="output">{this.state.outPut}</h2>
-            </div>
+            <OutputBox outputValue={this.state.outPut} boxLabel="BS4 Output" />
          </React.Fragment>
       );
    }
