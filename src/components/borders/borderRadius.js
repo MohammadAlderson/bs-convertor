@@ -2,7 +2,7 @@ import React from "react";
 import "./../../styles/App.css";
 import {InputBox} from './../ui-components/inputBox'
 import {OutputBox} from './../ui-components/outputBox'
-
+import {FormButtons} from "./../ui-components/formButtons"
 
 export default class BorderRadius extends React.Component {
    constructor(props) {
@@ -28,12 +28,11 @@ export default class BorderRadius extends React.Component {
       if (this.BorderRadius.value === "") {
          this.setState({outPut:"Enter something in text box"})
          setTimeout(() => this.setState({ outPut: "Waiting..." }), 3000);
-         console.log('if occured');
          return;
       }
       this.setState({
-         outPut: `border-radius: ${this.state.borderRadiusValue.trim()}; 
-         -webkit-border-radius: ${this.state.borderRadiusValue.trim()}; 
+         outPut: `border-radius: ${this.state.borderRadiusValue.trim()};
+         -webkit-border-radius: ${this.state.borderRadiusValue.trim()};
          -moz-border-radius: ${this.state.borderRadiusValue.trim()};
           -ms-border-radius: ${this.state.borderRadiusValue.trim()};`
       });
@@ -53,22 +52,10 @@ export default class BorderRadius extends React.Component {
                   boxLabel="border-radius" refController={this.RefController}
                   inputId="border-radius" inputClass="form-input"
                   inputController={this.onChangeBorderRadiusValue} />
-               <div className="form-item btns-container">
-                  <button
-                     className="form-btn"
-                     id="convertorBtn"
-                     onClick={this.doConvert}
-                  >
-                     Convert
-                  </button>
-                  <button
-                     className="form-btn"
-                     id="clearBtn"
-                     onClick={this.doClear}
-                  >
-                     Clear
-                  </button>
-               </div>
+               <FormButtons
+                  convertId="convertorBtn" clearId="clearBtn"
+                  convertLabel="Convert" clearLabel="Clear"
+                  convertClick={this.doConvert} clearClick={this.doClear} />
             </div>
             <OutputBox outputValue={this.state.outPut} boxLabel="Border-Radius Output" />
          </React.Fragment>

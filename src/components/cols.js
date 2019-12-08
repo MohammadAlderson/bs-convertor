@@ -2,6 +2,7 @@ import React from "react";
 import "./../styles/App.css";
 import {OutputBox} from "./../components/ui-components/outputBox";
 import {InputBox} from "./../components/ui-components/inputBox";
+import {FormButtons} from "./../components/ui-components/formButtons";
 
 export default class Cols extends React.Component {
    constructor(props) {
@@ -80,22 +81,10 @@ export default class Cols extends React.Component {
                   boxLabel="col-lg- " refController={ref => this.Col_Lg = ref}
                   inputId="Col-Lg" inputClass="form-input"
                   inputController={this.onChangeColLgValue} />
-               <div className="form-item btns-container">
-                  <button
-                     className="form-btn"
-                     id="convertorBtn"
-                     onClick={this.doConvert}
-                  >
-                     Convert
-                  </button>
-                  <button
-                     className="form-btn"
-                     id="clearBtn"
-                     onClick={this.doClear}
-                  >
-                     Clear
-                  </button>
-               </div>
+               <FormButtons
+                  convertId="convertorBtn" clearId="clearBtn"
+                  convertLabel="Convert" clearLabel="Clear"
+                  convertClick={this.doConvert} clearClick={this.doClear} />
             </div>
             <OutputBox outputValue={this.state.outPut} boxLabel="BS4 Output" />
          </React.Fragment>
