@@ -1,6 +1,7 @@
 import React from "react";
 import "./../styles/App.css";
 import {OutputBox} from "./../components/ui-components/outputBox";
+import {InputBox} from "./../components/ui-components/inputBox";
 
 export default class Cols extends React.Component {
    constructor(props) {
@@ -63,46 +64,22 @@ export default class Cols extends React.Component {
             <h1 className="page-title">BS3 To BS4 Convertor</h1>
             <div className="form-container">
                <h3 className="input-title">BS3 Input</h3>
-               <div className="form-item">
-                  <label className="form-label">Col-Xs- :</label>
-                  <input
-                     ref={ref => (this.Col_Xs = ref)}
-                     id="Col-Xs"
-                     className="form-input"
-                     onChange={this.onChangeColXsValue}
-                     type="text"
-                  />
-               </div>
-               <div className="form-item">
-                  <label className="form-label">Col-Sm- :</label>
-                  <input
-                     ref={ref => (this.Col_Sm = ref)}
-                     id="Col-Sm"
-                     className="form-input"
-                     onChange={this.onChangeColSmValue}
-                     type="text"
-                  />
-               </div>
-               <div className="form-item">
-                  <label className="form-label">Col-Md- :</label>
-                  <input
-                     ref={ref => (this.Col_Md = ref)}
-                     id="Col-Md"
-                     className="form-input"
-                     onChange={this.onChangeColMdValue}
-                     type="text"
-                  />
-               </div>
-               <div className="form-item">
-                  <label className="form-label">Col-Lg- :</label>
-                  <input
-                     ref={ref => (this.Col_Lg = ref)}
-                     id="Col-Lg"
-                     className="form-input"
-                     onChange={this.onChangeColLgValue}
-                     type="text"
-                  />
-               </div>
+               <InputBox
+                  boxLabel="col-xs- " refController={ref => this.Col_Xs = ref}
+                  inputId="Col-Xs" inputClass="form-input"
+                  inputController={this.onChangeColXsValue} />
+               <InputBox
+                  boxLabel="col-sm- " refController={ref => this.Col_Sm = ref}
+                  inputId="Col-Sm" inputClass="form-input"
+                  inputController={this.onChangeColSmValue} />
+               <InputBox
+                  boxLabel="col-md- " refController={ref => this.Col_Md = ref}
+                  inputId="Col-Md" inputClass="form-input"
+                  inputController={this.onChangeColMdValue} />
+               <InputBox
+                  boxLabel="col-lg- " refController={ref => this.Col_Lg = ref}
+                  inputId="Col-Lg" inputClass="form-input"
+                  inputController={this.onChangeColLgValue} />
                <div className="form-item btns-container">
                   <button
                      className="form-btn"

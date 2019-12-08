@@ -49,8 +49,10 @@ export default class BorderRadius extends React.Component {
             <h1 className="page-title">Border-Radius</h1>
             <div className="form-container">
                <h3 className="input-title">Border-Radius Input</h3>
-               <InputBox boxLabel="border-radius" refController={this.RefController} inputId="border-radius" 
-                  inputClass="form-input" inputController={this.onChangeBorderRadiusValue} />
+               <InputBox
+                  boxLabel="border-radius" refController={this.RefController}
+                  inputId="border-radius" inputClass="form-input"
+                  inputController={this.onChangeBorderRadiusValue} />
                <div className="form-item btns-container">
                   <button
                      className="form-btn"
