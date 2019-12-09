@@ -4,7 +4,7 @@ import Cols from './components/cols'
 import Webkits from './components/webkits'
 import Home from './components/home'
 import Navbar from "./components/navbar";
-import BorderRadius from './components/borders/borderRadius'
+import {BorderRadius} from './components/borders/borderRadius'
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 
